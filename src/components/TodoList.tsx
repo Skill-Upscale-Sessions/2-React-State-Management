@@ -1,29 +1,34 @@
-import React, { useState, useCallback, useMemo } from 'react'
-import { useAppSelector, useAppDispatch } from '../store/hooks'
-import { addTodo, toggleTodo, removeTodo } from '../store/slices/todoSlice'
+import React, { useState, useCallback, useMemo } from "react";
+import { useAppSelector, useAppDispatch } from "../store/hooks";
+import { addTodo, toggleTodo, removeTodo } from "../store/slices/todoSlice";
 
 interface Todo {
-  id: number
-  text: string
-  completed: boolean
+  id: number;
+  text: string;
+  completed: boolean;
 }
 
 const TodoList = () => {
-  const [newTodo, setNewTodo] = useState('')
-  const todos = useAppSelector((state: { todos: { items: Todo[] } }) => state.todos.items)
-  const dispatch = useAppDispatch()
+  const [newTodo, setNewTodo] = useState("");
+  const todos = useAppSelector(
+    (state: { todos: { items: Todo[] } }) => state.todos.items
+  );
+  const dispatch = useAppDispatch();
 
-  const handleAddTodo = useCallback((e: React.FormEvent) => {
-    e.preventDefault()
-    if (newTodo.trim()) {
-      dispatch(addTodo(newTodo.trim()))
-      setNewTodo('')
-    }
-  }, [dispatch, newTodo])
+  const handleAddTodo = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      if (newTodo.trim()) {
+        dispatch(addTodo(newTodo.trim()));
+        setNewTodo("");
+      }
+    },
+    [dispatch, newTodo]
+  );
 
   const completedCount = useMemo(() => {
-    return todos.filter((todo: Todo) => todo.completed).length
-  }, [todos])
+    return todos.filter((todo: Todo) => todo.completed).length;
+  }, [todos]);
 
   return (
     <div className="p-6 bg-white rounded-lg shadow-md">
@@ -46,7 +51,9 @@ const TodoList = () => {
         </div>
       </form>
       <div className="mb-4">
-        <p>Completed: {completedCount} / {todos.length}</p>
+        <p>
+          Completed: {completedCount} / {todos.length}
+        </p>
       </div>
       <ul className="space-y-2">
         {todos.map((todo: Todo) => (
@@ -61,7 +68,9 @@ const TodoList = () => {
                 onChange={() => dispatch(toggleTodo(todo.id))}
                 className="h-4 w-4"
               />
-              <span className={todo.completed ? 'line-through text-gray-500' : ''}>
+              <span
+                className={todo.completed ? "line-through text-gray-500" : ""}
+              >
                 {todo.text}
               </span>
             </div>
@@ -75,7 +84,7 @@ const TodoList = () => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default TodoList 
+export default TodoList;

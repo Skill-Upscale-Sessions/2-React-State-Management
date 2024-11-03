@@ -1,17 +1,23 @@
-import React, { useState, useCallback } from 'react'
-import { useAppSelector, useAppDispatch } from '../store/hooks'
-import { increment, decrement, incrementByAmount } from '../store/slices/counterSlice'
+import React, { useState, useCallback } from "react";
+import { useAppSelector, useAppDispatch } from "../store/hooks";
+import {
+  increment,
+  decrement,
+  incrementByAmount,
+} from "../store/slices/counterSlice";
 
 const Counter = () => {
-  const count = useAppSelector((state: { counter: { value: number } }) => state.counter.value)
-  const dispatch = useAppDispatch()
-  const [incrementAmount, setIncrementAmount] = useState('2')
+  const count = useAppSelector(
+    (state: { counter: { value: number } }) => state.counter.value
+  );
+  const dispatch = useAppDispatch();
+  const [incrementAmount, setIncrementAmount] = useState("2");
 
-  const incrementValue = Number(incrementAmount) || 0
+  const incrementValue = Number(incrementAmount) || 0;
 
   const handleIncrementByAmount = useCallback(() => {
-    dispatch(incrementByAmount(incrementValue))
-  }, [dispatch, incrementValue])
+    dispatch(incrementByAmount(incrementValue));
+  }, [dispatch, incrementValue]);
 
   return (
     <div className="p-6 bg-white rounded-lg shadow-md">
@@ -48,7 +54,7 @@ const Counter = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Counter 
+export default Counter;
