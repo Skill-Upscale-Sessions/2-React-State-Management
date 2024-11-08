@@ -11,18 +11,18 @@ const UseCallbackHookComponent = ({
   const [number, setNumber] = useState(0);
   const [dark, setDark] = useState(false);
 
-  // const fetchData = useCallback(
-  //   (number: number) => {
-  //     console.log("Fetching Data...");
-  //     return [number, number + 1, number + 2];
-  //   },
-  //   [number]
-  // );
+  const fetchData = useCallback(
+    (number: number) => {
+      console.log("Fetching Data...");
+      return [number, number + 1, number + 2];
+    },
+    [number]
+  );
 
-  const fetchData = (number: number) => {
-    console.log("Fetching Data...");
-    return [number, number + 1, number + 2];
-  };
+  // const fetchData = (number: number) => {
+  //   console.log("Fetching Data...");
+  //   return [number, number + 1, number + 2];
+  // };
 
   if (isUseCallbackShow) {
     return (
