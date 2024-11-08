@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Flex, Button, Badge } from "@radix-ui/themes";
+import { HookName, MUST_KNOW_HOOKS } from "../Types/types";
+
 import UseStateHookComponent from "./UseStateHookComponent";
 import UseEffectHookComponent from "./UseEffectHookComponent";
 import UseContextHookComponent from "./UseContextHookComponent";
-import UseReducerHookComponent from "./UseReducerHookComponent";
 import UseMemoHookComponent from "./UseMemoHookComponent";
 import UseCallbackHookComponent from "./UseCallbackHookComponent";
 import UseRefHookComponent from "./UseRefHookComponent";
-import { HookName, LESSER_USED_HOOKS, MUST_KNOW_HOOKS } from "../Types/types";
 
 interface HookButton {
   name: string;
@@ -41,8 +41,6 @@ const ReactHooks: React.FC = () => {
         return <UseEffectHookComponent isUseEffectShow={true} />;
       case "isUseContextShow":
         return <UseContextHookComponent isUseContextShow={true} />;
-      case "isUseReducerShow":
-        return <UseReducerHookComponent isUseReducerShow={true} />;
       case "isUseMemoShow":
         return <UseMemoHookComponent isUseMemoShow={true} />;
       case "isUseCallbackShow":
@@ -60,22 +58,11 @@ const ReactHooks: React.FC = () => {
         <Badge color="ruby" className="text-lg mb-2">
           Must Know Hooks
         </Badge>
-        <div className="space-x-3">
+        <Flex direction="row" gap="2" wrap="wrap">
           {MUST_KNOW_HOOKS.map((hook) => (
             <HookButton key={hook.name} hook={hook} />
           ))}
-        </div>
-      </Flex>
-
-      <Flex direction="column" gap="4">
-        <Badge color="violet" className="text-lg mb-2">
-          Lesser Used Hooks
-        </Badge>
-        <div className="space-x-3">
-          {LESSER_USED_HOOKS.map((hook) => (
-            <HookButton key={hook.name} hook={hook} />
-          ))}
-        </div>
+        </Flex>
       </Flex>
 
       <div>{renderActiveComponent()}</div>
