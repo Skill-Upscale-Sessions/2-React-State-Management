@@ -7,36 +7,12 @@ import UseReducerHookComponent from "./UseReducerHookComponent";
 import UseMemoHookComponent from "./UseMemoHookComponent";
 import UseCallbackHookComponent from "./UseCallbackHookComponent";
 import UseRefHookComponent from "./UseRefHookComponent";
-
-type HookName = keyof ShowReactProps;
-
-interface ShowReactProps {
-  isUseStateShow: boolean;
-  isUseEffectShow: boolean;
-  isUseContextShow: boolean;
-  isUseReducerShow: boolean;
-  isUseMemoShow: boolean;
-  isUseCallbackShow: boolean;
-  isUseRefShow: boolean;
-}
+import { HookName, LESSER_USED_HOOKS, MUST_KNOW_HOOKS } from "../Types/types";
 
 interface HookButton {
   name: string;
   stateKey: HookName;
 }
-
-const MUST_KNOW_HOOKS: HookButton[] = [
-  { name: "useState", stateKey: "isUseStateShow" },
-  { name: "useEffect", stateKey: "isUseEffectShow" },
-  { name: "useContext", stateKey: "isUseContextShow" },
-];
-
-const LESSER_USED_HOOKS: HookButton[] = [
-  { name: "useReducer", stateKey: "isUseReducerShow" },
-  { name: "useMemo", stateKey: "isUseMemoShow" },
-  { name: "useCallback", stateKey: "isUseCallbackShow" },
-  { name: "useRef", stateKey: "isUseRefShow" },
-];
 
 const ReactHooks: React.FC = () => {
   const [activeHook, setActiveHook] = useState<HookName | null>(null);
