@@ -27,6 +27,7 @@ const UseMemoHookComponent = ({
     backgroundColor: dark ? "black" : "white",
     color: dark ? "white" : "black",
   };
+
   if (isUseMemoShow) {
     return (
       <Flex
