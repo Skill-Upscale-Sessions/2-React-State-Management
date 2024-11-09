@@ -4,6 +4,7 @@ import ReactHooks from "./components/ReactHooks";
 import LazyLoading from "./components/LazyLoading";
 import { Route, Routes } from "react-router-dom";
 // const LazyAbout = React.lazy(() => import("./components/LazyLoading"));
+import FetchData from "./components/FetchData";
 
 export const ThemeContext = createContext({
   theme: "dark",
@@ -22,6 +23,12 @@ const NavBar = () => {
       <Link to="/lazy" style={{ color: "#fff", textDecoration: "none" }}>
         Lazy Loading
       </Link>
+      <Link
+        to="/fetch"
+        style={{ marginLeft: "1rem", color: "#fff", textDecoration: "none" }}
+      >
+        Fetch Data
+      </Link>
     </nav>
   );
 };
@@ -36,7 +43,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<ReactHooks />} />
           <Route path="/lazy" element={<LazyLoading />} />
-           {/* <Route
+          {/* <Route
             path="/lazy"
             element={
               <React.Suspense fallback={<div>Loading...</div>}>
@@ -44,6 +51,7 @@ const App = () => {
               </React.Suspense>
             }
           /> */}
+          <Route path="/fetch" element={<FetchData />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </BrowserRouter>
