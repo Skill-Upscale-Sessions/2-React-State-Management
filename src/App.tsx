@@ -5,6 +5,7 @@ import LazyLoading from "./components/LazyLoading";
 import { Route, Routes } from "react-router-dom";
 // const LazyAbout = React.lazy(() => import("./components/LazyLoading"));
 import FetchData from "./components/FetchData";
+import FetchDataWithRedux from "./components/FetchDataWithRedux";
 
 export const ThemeContext = createContext({
   theme: "dark",
@@ -29,6 +30,12 @@ const NavBar = () => {
       >
         Fetch Data
       </Link>
+      <Link
+        to="/fetch-redux"
+        style={{ marginLeft: "1rem", color: "#fff", textDecoration: "none" }}
+      >
+        Fetch Data with Redux
+      </Link>
     </nav>
   );
 };
@@ -52,6 +59,7 @@ const App = () => {
             }
           /> */}
           <Route path="/fetch" element={<FetchData />} />
+          <Route path="/fetch-redux" element={<FetchDataWithRedux />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </BrowserRouter>
