@@ -10,8 +10,6 @@ const FetchDataWithRedux: React.FC = () => {
     (state: RootState) => state.users
   );
 
-  console.log("isDataLoading", isDataLoading);
-
   useEffect(() => {
     dispatch(getAllUsersAction());
   }, [dispatch]);
