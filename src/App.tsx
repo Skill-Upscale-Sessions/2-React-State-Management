@@ -28,13 +28,13 @@ const NavBar = () => {
         to="/users"
         style={{ marginLeft: "1rem", color: "#fff", textDecoration: "none" }}
       >
-        Fetch Data
+        Users
       </Link>
       <Link
         to="/users-redux"
         style={{ marginLeft: "1rem", color: "#fff", textDecoration: "none" }}
       >
-        Fetch Data with Redux
+        Redux
       </Link>
     </nav>
   );
