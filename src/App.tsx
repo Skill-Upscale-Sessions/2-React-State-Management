@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import Users from "./components/common/Users";
 import UsersWithRedux from "./components/common/UsersWithRedux";
 import NavBar from "./components/common/NavBar";
+import Counter from "./components/common/Counter";
 // const LazyAbout = React.lazy(() => import("./components/common/About"));
 
 export const ThemeContext = createContext({
@@ -33,6 +34,7 @@ const App = () => {
           /> */}
           <Route path="/users" element={<Users />} />
           <Route path="/redux" element={<UsersWithRedux />} />
+          <Route path="/counter" element={<Counter />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </BrowserRouter>
