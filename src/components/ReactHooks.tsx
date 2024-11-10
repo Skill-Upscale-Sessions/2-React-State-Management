@@ -26,6 +26,7 @@ const ReactHooks: React.FC = () => {
   const HookButton: React.FC<{ hook: HookButton }> = ({ hook }) => (
     <Button
       variant="surface"
+      color={activeHook === hook.stateKey ? "purple" : "blue"}
       onClick={() => toggleHook(hook.stateKey)}
       className={activeHook === hook.stateKey ? "active" : ""}
     >
