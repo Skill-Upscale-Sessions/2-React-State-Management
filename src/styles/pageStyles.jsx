@@ -7,8 +7,9 @@ export const HomepageContainerDarkBackground =
     width: "100vw",
     maxWidth: "100%",
     display: "flex",
+    paddingTop: "5vh",
     flexDirection: "column",
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
     backgroundColor: theme.palette.primary.main,
     scrollSnapAlign: "center",
@@ -27,13 +28,10 @@ export const HomepageContainerDarkBackground =
       flexDirection: "row",
       width: "100%",
       position: "relative",
-      justifyContent:
-        position === "middle"
-          ? "center"
-          : "flex-start",
+      justifyContent:"center",
       gap: "8%",
       alignItems: "center",
-      padding: "0px 5%",
+      padding: "5% 5% 0% 5%",
       zIndex: 0,
       // border: "3px solid green",
       [theme.breakpoints.down("md")]: {

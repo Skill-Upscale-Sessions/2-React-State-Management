@@ -1,9 +1,13 @@
 import React from 'react'
-import { ContentSection, HomepageContainerDarkBackground, ImageContainer } from '../../../styles/homePage'
+import { ContentSection, HomepageContainerDarkBackground, ImageContainer } from '../../../styles/pageStyles'
+import { Typography } from '@mui/material';
+import { useUserContext } from '../../../CONTEXT/userContext';
 
 function SampleSection() {
+  // const { username } = useUserContext();
   return (
     <HomepageContainerDarkBackground height={"100vh"}>
+      <Typography variant="h1">HOME PAGE</Typography>
         <ContentSection>
             <ImageContainer>
                 <img src="https://placehold.co/600x400" alt="sample" />
