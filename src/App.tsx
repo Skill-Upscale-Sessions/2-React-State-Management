@@ -1,11 +1,11 @@
 import React, { createContext, useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import ReactHooks from "./components/ReactHooks";
-import LazyLoading from "./components/LazyLoading";
+import About from "./components/About";
 import { Route, Routes } from "react-router-dom";
-// const LazyAbout = React.lazy(() => import("./components/LazyLoading"));
-import FetchData from "./components/FetchData";
-import FetchDataWithRedux from "./components/FetchDataWithRedux";
+// const LazyAbout = React.lazy(() => import("./components/About"));
+import Users from "./components/Users";
+import UsersWithRedux from "./components/UsersWithRedux";
 
 export const ThemeContext = createContext({
   theme: "dark",
@@ -21,17 +21,17 @@ const NavBar = () => {
       >
         Home
       </Link>
-      <Link to="/lazy" style={{ color: "#fff", textDecoration: "none" }}>
-        Lazy Loading
+      <Link to="/about" style={{ color: "#fff", textDecoration: "none" }}>
+        About
       </Link>
       <Link
-        to="/fetch"
+        to="/users"
         style={{ marginLeft: "1rem", color: "#fff", textDecoration: "none" }}
       >
         Fetch Data
       </Link>
       <Link
-        to="/fetch-redux"
+        to="/users-redux"
         style={{ marginLeft: "1rem", color: "#fff", textDecoration: "none" }}
       >
         Fetch Data with Redux
@@ -49,7 +49,7 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<ReactHooks />} />
-          <Route path="/lazy" element={<LazyLoading />} />
+          <Route path="/about" element={<About />} />
           {/* <Route
             path="/lazy"
             element={
@@ -58,8 +58,8 @@ const App = () => {
               </React.Suspense>
             }
           /> */}
-          <Route path="/fetch" element={<FetchData />} />
-          <Route path="/fetch-redux" element={<FetchDataWithRedux />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users-redux" element={<UsersWithRedux />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </BrowserRouter>

@@ -1,20 +1,41 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import * as Avatar from "@radix-ui/react-avatar";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../store/store";
-import { getAllUsersAction } from "../store/actions/userAction";
 
-const FetchDataWithRedux: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const { isDataLoading, users } = useSelector(
-    (state: RootState) => state.users
-  );
+interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  educationLevel: string;
+  isActive: boolean;
+  createdAt: number;
+}
+
+const Users: React.FC = () => {
+  const [users, setUsers] = useState<User[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const URL = "https://672f6be2229a881691f2e2a6.mockapi.io/api/v1/users";
 
   useEffect(() => {
-    dispatch(getAllUsersAction());
-  }, [dispatch]);
+    const Users = async () => {
+      try {
+        const response = await axios.get<User[]>(URL);
+        setUsers(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError(
+          err instanceof Error ? err.message : "An unexpected error occurred"
+        );
+        setLoading(false);
+      }
+    };
 
-  if (isDataLoading) return <div className="loading">Loading...</div>;
+    Users();
+  }, []);
+
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
 
   return (
     <div className="table-container">
@@ -56,4 +77,4 @@ const FetchDataWithRedux: React.FC = () => {
   );
 };
 
-export default FetchDataWithRedux;
+export default Users;

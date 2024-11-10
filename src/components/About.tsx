@@ -1,6 +1,6 @@
 import React from "react";
- 
-const LazyLoading = () => {
+
+const About = () => {
   return (
     <div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget
@@ -180,4 +180,4 @@ const LazyLoading = () => {
   );
 };
 
-export default LazyLoading;
+export default About;
