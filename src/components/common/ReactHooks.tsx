@@ -72,6 +72,8 @@ const ReactHooks: React.FC = () => {
           </Flex>
 
           <div>{renderActiveComponent()}</div>
+
+          {/* {userType !== "admin" ? <AdminComponent /> : <UserComponent />} */}
         </div>
       </div>
     </div>
@@ -79,3 +81,22 @@ const ReactHooks: React.FC = () => {
 };
 
 export default ReactHooks;
+
+const AdminComponent = () => {
+  return (
+    <div className="p-6 bg-blue-500 text-white rounded-lg shadow-lg">
+      <h1 className="text-3xl font-bold">Admin Component</h1>
+      <p className="mt-4 text-lg">Manage and configure settings here</p>
+    </div>
+  );
+};
+const UserComponent = () => {
+  return (
+    <div className="p-6 bg-green-600 text-white rounded-lg shadow-lg">
+      <h1 className="text-3xl font-bold">User Component</h1>
+      <p className="mt-4 text-lg">
+        Welcome to your profile. Enjoy your experience!
+      </p>
+    </div>
+  );
+};
