@@ -7,6 +7,7 @@ const UseEffectHookComponent = ({
   isUseEffectShow: boolean;
 }) => {
   const [number, setNumber] = useState(0);
+  const [counter, setCounter] = useState(10);
   const [square, setSquare] = useState(0);
 
   useEffect(() => {
@@ -37,6 +38,7 @@ const UseEffectHookComponent = ({
         >
           Increment
         </Button>
+
         <Button
           onClick={() => setNumber(number - 1)}
           variant="surface"
@@ -46,6 +48,14 @@ const UseEffectHookComponent = ({
         </Button>
 
         <div className="text-lg font-semibold">Square: {square}</div>
+        <Button
+          onClick={() => setCounter((prevCounter) => prevCounter + 10)}
+          variant="surface"
+          color="indigo"
+        >
+          Add
+        </Button>
+        <div className="text-lg font-semibold">Counter: {counter}</div>
       </Flex>
     );
   }
