@@ -3,9 +3,9 @@ import { BrowserRouter, Link } from "react-router-dom";
 import ReactHooks from "./components/ReactHooks";
 import About from "./components/About";
 import { Route, Routes } from "react-router-dom";
-// const LazyAbout = React.lazy(() => import("./components/About"));
 import Users from "./components/Users";
 import UsersWithRedux from "./components/UsersWithRedux";
+// const LazyAbout = React.lazy(() => import("./components/About"));
 
 export const ThemeContext = createContext({
   theme: "dark",
@@ -31,7 +31,7 @@ const NavBar = () => {
         Users
       </Link>
       <Link
-        to="/users-redux"
+        to="/redux"
         style={{ marginLeft: "1rem", color: "#fff", textDecoration: "none" }}
       >
         Redux
@@ -51,7 +51,7 @@ const App = () => {
           <Route path="/" element={<ReactHooks />} />
           <Route path="/about" element={<About />} />
           {/* <Route
-            path="/lazy"
+            path="/about"
             element={
               <React.Suspense fallback={<div>Loading...</div>}>
                 <LazyAbout />
@@ -59,7 +59,7 @@ const App = () => {
             }
           /> */}
           <Route path="/users" element={<Users />} />
-          <Route path="/users-redux" element={<UsersWithRedux />} />
+          <Route path="/redux" element={<UsersWithRedux />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </BrowserRouter>
