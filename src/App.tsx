@@ -1,12 +1,12 @@
 import React, { createContext, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import ReactHooks from "./components/ReactHooks";
-import About from "./components/About";
+import ReactHooks from "./components/common/ReactHooks";
+import About from "./components/common/About";
 import { Route, Routes } from "react-router-dom";
-import Users from "./components/Users";
-import UsersWithRedux from "./components/UsersWithRedux";
-import NavBar from "./components/NavBar";
-// const LazyAbout = React.lazy(() => import("./components/About"));
+import Users from "./components/common/Users";
+import UsersWithRedux from "./components/common/UsersWithRedux";
+import NavBar from "./components/common/NavBar";
+// const LazyAbout = React.lazy(() => import("./components/common/About"));
 
 export const ThemeContext = createContext({
   theme: "dark",

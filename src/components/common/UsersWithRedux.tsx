@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import * as Avatar from "@radix-ui/react-avatar";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../store/store";
-import { getAllUsersAction } from "../store/actions/userAction";
+import { AppDispatch, RootState } from "../../store/store";
+import { getAllUsersAction } from "../../store/actions/userAction";
 
 const UsersWithRedux: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();

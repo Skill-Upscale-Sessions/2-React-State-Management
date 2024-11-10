@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "../App";
+import { ThemeContext } from "../../App";
 import { Flex, Heading, Button } from "@radix-ui/themes";
 
 const UseContextHookComponent = ({

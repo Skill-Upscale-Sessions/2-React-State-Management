@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Flex, Button, Badge } from "@radix-ui/themes";
-import { HookName, MUST_KNOW_HOOKS } from "../Types/types";
+import { HookName, MUST_KNOW_HOOKS } from "../../Types/types";
 
-import UseStateHookComponent from "./UseStateHookComponent";
-import UseEffectHookComponent from "./UseEffectHookComponent";
-import UseContextHookComponent from "./UseContextHookComponent";
-import UseMemoHookComponent from "./UseMemoHookComponent";
-import UseCallbackHookComponent from "./UseCallbackHookComponent";
-import UseRefHookComponent from "./UseRefHookComponent";
+import UseStateHookComponent from "../HooksComponents/UseStateHookComponent";
+import UseEffectHookComponent from "../HooksComponents/UseEffectHookComponent";
+import UseContextHookComponent from "../HooksComponents/UseContextHookComponent";
+import UseMemoHookComponent from "../HooksComponents/UseMemoHookComponent";
+import UseCallbackHookComponent from "../HooksComponents/UseCallbackHookComponent";
+import UseRefHookComponent from "../HooksComponents/UseRefHookComponent";
 
 interface HookButton {
   name: string;
