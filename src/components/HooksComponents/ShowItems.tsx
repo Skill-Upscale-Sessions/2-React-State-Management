@@ -11,6 +11,7 @@ const ShowItems = ({
 
   useEffect(() => {
     setData(fetchData(number));
+    console.log("ShowItems rendered");
   }, [fetchData, number]);
 
   return (

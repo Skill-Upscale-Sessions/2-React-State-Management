@@ -1,5 +1,5 @@
 import { Button, Flex } from "@radix-ui/themes";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 const anotherFunction = (number: number) => {
   console.log("Heavy function called");
@@ -16,12 +16,12 @@ const UseMemoHookComponent = ({
   const [number, setNumber] = useState(0);
   const [dark, setDark] = useState(false);
 
-  // const doubleNumber = anotherFunction(number);
+  const doubleNumber = anotherFunction(number);
   // const doubleNumber = useMemo(() => anotherFunction(number), [number]);
 
-  const doubleNumber = useMemo(() => {
-    return anotherFunction(number);
-  }, [number]);
+  // const doubleNumber = useMemo(() => {
+  //   return anotherFunction(number);
+  // }, [number]);
 
   const themeStyles = {
     backgroundColor: dark ? "black" : "white",
@@ -46,7 +46,9 @@ const UseMemoHookComponent = ({
         <Button onClick={() => setDark((prevDark) => !prevDark)}>
           Change Theme
         </Button>
-        <div style={themeStyles}>{doubleNumber}</div>
+        <div style={themeStyles}>
+          <h2>Changed Value : {doubleNumber}</h2>
+        </div>
       </Flex>
     );
   }
