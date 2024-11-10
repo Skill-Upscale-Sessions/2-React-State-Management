@@ -14,7 +14,8 @@ const UsersWithRedux: React.FC = () => {
     dispatch(getAllUsersAction());
   }, [dispatch]);
 
-  if (isDataLoading) return <div className="loading">Loading...</div>;
+  if (isDataLoading)
+    return <div className="loading">API Call in progress...</div>;
 
   return (
     <div className="table-container">
