@@ -9,20 +9,6 @@ const UseEffectHookComponent = ({
   const [number, setNumber] = useState(0);
   const [square, setSquare] = useState(0);
 
-  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  // const handleResize = () => {
-  //   setWindowWidth(window.innerWidth);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
-
   useEffect(() => {
     console.log("useEffect works");
     setSquare(number * number);
@@ -42,8 +28,6 @@ const UseEffectHookComponent = ({
         className="p-4 space-x-4 bg-blue-100"
       >
         <Heading size="6">useEffect Hook</Heading>
-
-        {/* <div className="text-lg font-semibold">Window Width: {windowWidth}</div> */}
 
         <div className="text-lg font-semibold">Number: {number}</div>
         <Button
