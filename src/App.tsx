@@ -1,44 +1,17 @@
 import React, { createContext, useState } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import ReactHooks from "./components/ReactHooks";
 import About from "./components/About";
 import { Route, Routes } from "react-router-dom";
 import Users from "./components/Users";
 import UsersWithRedux from "./components/UsersWithRedux";
+import NavBar from "./components/NavBar";
 // const LazyAbout = React.lazy(() => import("./components/About"));
 
 export const ThemeContext = createContext({
   theme: "dark",
   setTheme: (theme: string) => {},
 });
-
-const NavBar = () => {
-  return (
-    <nav style={{ padding: "1rem", backgroundColor: "#333", color: "#fff" }}>
-      <Link
-        to="/"
-        style={{ marginRight: "1rem", color: "#fff", textDecoration: "none" }}
-      >
-        Home
-      </Link>
-      <Link to="/about" style={{ color: "#fff", textDecoration: "none" }}>
-        About
-      </Link>
-      <Link
-        to="/users"
-        style={{ marginLeft: "1rem", color: "#fff", textDecoration: "none" }}
-      >
-        Users
-      </Link>
-      <Link
-        to="/redux"
-        style={{ marginLeft: "1rem", color: "#fff", textDecoration: "none" }}
-      >
-        Redux
-      </Link>
-    </nav>
-  );
-};
 
 const App = () => {
   const [theme, setTheme] = useState("dark");
