@@ -8,8 +8,14 @@ const UseStateHookComponent = ({
 }) => {
   const [number, setNumber] = useState<number>(0);
 
+  // if (true) {
+  //   useState();
+  // }
+
   const handleIncrement = () => {
     setNumber(number + 1);
+
+    // setNumber((prevNumber) => prevNumber + 1);
     // setNumber((prevNumber) => prevNumber + 1);
   };
 
@@ -25,20 +31,26 @@ const UseStateHookComponent = ({
   // });
 
   // const handleColorChange = () => {
-  //   setData({ ...data, color: "blue" });
+  //   setData({
+  //     ...data,
+  //     color: data.color === "red" ? "blue" : "red",
+  //   });
   // };
 
   // const handleCountIncrement = () => {
   //   setData((prevData) => {
   //     return { ...prevData, count: prevData.count + 1 };
   //   });
-
   //   // setData((prevData) => {
   //   //   return { color: prevData.color, count: prevData.count + 1 };
   //   // });
 
-  //   // setData({ ...data, count: data.count + 3 }); // Updates count to data.count + 3
-  //   // setData({ ...data, count: data.count + 1 }); // Immediately after, updates count to data.count + 1
+  //   // setData({ ...data, count: data.count + 3 });
+  //   // setData({ ...data, count: data.count + 1 });
+
+  //   // setData((prevData) => {
+  //   //   return { ...prevData, count: prevData.count + 1 };
+  //   // });
   // };
 
   if (isUseStateShow) {
