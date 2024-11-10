@@ -3,16 +3,18 @@ import { useState, useRef, useEffect } from "react";
 
 const UseRefHookComponent = ({ isUseRefShow }: { isUseRefShow: boolean }) => {
   const [name, setName] = useState("");
-  // const renderCount = useRef(1);
-  // useEffect(() => {
-  //   renderCount.current = renderCount.current + 1;
-  // });
 
-  const prevName = useRef("");
+  const renderCount = useRef(1);
 
   useEffect(() => {
-    prevName.current = name;
-  }, [name]);
+    renderCount.current = renderCount.current + 1;
+  });
+
+  // const prevName = useRef("");
+
+  // useEffect(() => {
+  //   prevName.current = name;
+  // }, [name]);
 
   if (isUseRefShow) {
     return (
@@ -25,15 +27,6 @@ const UseRefHookComponent = ({ isUseRefShow }: { isUseRefShow: boolean }) => {
       >
         <Heading size="6">useRef Hook</Heading>
 
-        {/* <TextField.Root
-          size="1"
-          placeholder="Enter your text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <Heading size="5">You typed: {name}</Heading>
-        <Heading size="7">Render Count: {renderCount.current}</Heading> */}
-
         <TextField.Root
           size="1"
           placeholder="Enter your text"
@@ -41,7 +34,16 @@ const UseRefHookComponent = ({ isUseRefShow }: { isUseRefShow: boolean }) => {
           onChange={(e) => setName(e.target.value)}
         />
         <Heading size="5">You typed: {name}</Heading>
-        <Heading size="5">Previous Value: {prevName.current}</Heading>
+        <Heading size="7">Render Count: {renderCount.current}</Heading>
+        {/* 
+        <TextField.Root
+          size="1"
+          placeholder="Enter your text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <Heading size="5">You typed: {name}</Heading>
+        <Heading size="5">Previous Value: {prevName.current}</Heading> */}
       </Flex>
     );
   }
